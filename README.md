@@ -80,7 +80,7 @@ ecoTrip/
 
 Clone o repositório:
 
-git clone https://github.com/SEU-USUARIO/ecotrip-calculator.git
+git clone https://github.com/RT-cyber/ecotrip-calculator.git
 
 Acesse a pasta:
 
