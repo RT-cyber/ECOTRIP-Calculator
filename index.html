@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTrip Calculator</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="app-container">
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="header-content">
+      <div class="logo">
+        <span class="logo-icon">🌿</span>
+        <h1 class="logo-text">ECOTRIP</h1>
+        <span class="logo-subtitle">Calculator</span>
+      </div>
+
+      <button class="btn-help" id="btnHelp">
+        ℹ️ Como funciona
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="app-main">
+
+    <!-- CALCULATOR -->
+    <section class="calculator-section">
+      <div class="card">
+
+        <!-- INPUTS -->
+        <div class="input-group-row">
+          <div class="input-group">
+            <label>Origem</label>
+            <input type="text" id="origin" class="text-input" placeholder="São Paulo">
+          </div>
+
+          <div class="input-group">
+            <label>Destino</label>
+            <input type="text" id="destination" class="text-input" placeholder="Rio de Janeiro">
+          </div>
+        </div>
+
+        <!-- DISTÂNCIA -->
+        <div class="input-group">
+          <label>Distância</label>
+          <div class="distance-input-wrapper">
+            <input type="number" id="distance" class="text-input" placeholder="450">
+            <span class="distance-unit">km</span>
+          </div>
+
+          <input type="range" id="distanceSlider" class="distance-slider" min="1" max="1000" value="100">
+        </div>
+
+        <!-- TRANSPORTE -->
+        <div class="selection-container">
+
+          <div class="selection-group">
+            <h3>🚗 Transporte</h3>
+
+            <div class="selection-options">
+              <label class="radio-card">
+                <input type="radio" name="transport" value="car_gas" checked>
+                🚗 Carro (Gasolina)
+              </label>
+
+              <label class="radio-card">
+                <input type="radio" name="transport" value="bus">
+                🚌 Ônibus
+              </label>
+
+              <label class="radio-card">
+                <input type="radio" name="transport" value="plane">
+                ✈️ Avião
+              </label>
+
+              <label class="radio-card">
+                <input type="radio" name="transport" value="bike">
+                🚴 Bike
+              </label>
+            </div>
+          </div>
+
+          <!-- PERFIL -->
+          <div class="selection-group">
+            <h3>🛣️ Perfil</h3>
+
+            <div class="selection-options">
+              <label class="radio-card">
+                <input type="radio" name="profile" value="urban" checked>
+                Urbano
+              </label>
+
+              <label class="radio-card">
+                <input type="radio" name="profile" value="highway">
+                Rodovia
+              </label>
+
+              <label class="radio-card">
+                <input type="radio" name="profile" value="mixed">
+                Misto
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- BOTÃO -->
+        <button class="btn-calculate" id="btnCalculate">
+          🌱 CALCULAR IMPACTO
+        </button>
+
+      </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="results-section" id="resultsSection">
+
+      <h2>📊 Resultados</h2>
+
+      <div class="results-grid">
+
+        <!-- RESULTADO PRINCIPAL -->
+        <div class="card main-result">
+          <h3>Sua Pegada</h3>
+          <div class="impact-value" id="impactValue">0.0 kg CO₂</div>
+        </div>
+
+        <!-- EQUIVALENTES -->
+        <div class="card">
+          <h3>Equivalentes</h3>
+
+          <div class="equivalence-item">
+            🌳 Árvores: <span id="equivTrees">0</span>
+          </div>
+
+          <div class="equivalence-item">
+            🚗 Km carro: <span id="equivCarKm">0</span>
+          </div>
+
+          <div class="equivalence-item">
+            📱 Cargas: <span id="equivPhone">0</span>
+          </div>
+        </div>
+
+        <!-- SUGESTÃO -->
+        <div class="card suggestion-card">
+          <div>
+            <h3>Sugestão</h3>
+            <p id="suggestionText">
+              Preencha os dados para ver sugestões sustentáveis.
+            </p>
+          </div>
+
+          <button class="btn-suggestion">
+            Ver
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="app-footer">
+    <p>Made with 💚 for a greener planet</p>
+  </footer>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose">✕</button>
+    <h2>🌍 Como funciona</h2>
+    <p>
+      Calculamos o impacto com base na distância e no meio de transporte.
+    </p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
